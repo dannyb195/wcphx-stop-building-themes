@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Stop Building Themes and Start Building Solutions</title>
+
+	<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" href="css/reveal.min.css">
+	<link rel="stylesheet" href="css/theme/default.css" id="theme">
+	<link rel="stylesheet" href="css/dan.css">
+
+	<script type="text/javascript" src="js/jquery.js"></script>
+
+	<!-- For syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+
+	<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+	<script>
+		document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+	</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+		<style type="text/css">
+			li {
+				float: left;
+				clear: left;
+				display: -webkit-box;
+			}
+			ul {
+				float: left;
+				/*clear: left;*/
+			}
+		</style>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			(function(){
+				var $ = jQuery;
+
+				if ($.isFunction(window.show)) {
+					alert('i work');
+					$('body').prepend('show is a function');
+				};
+			})();
+		</script>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Stop Building Themes and Start Building Solutions:</h1>
+					<h3>Client-First Development:</h3>
+					<h5>The WordPress Front End Developer's Real Job</h5>
+					
+				</section>
+
+				<section>
+					<h2>Who I am </h2>
+					<img src="img/me.jpg" width="300" class="me"  />
+					<ul class="half-right">
+						<li class=" visible">Dan Beil</li>
+						<li>B.S. in Applied Sociology (2005)</li>
+						<li>Front-end WordPress Developer at Blue Earth Interactive - St Paul, MN</li>
+						<li>Freelanced for 4-ish Years prior to BEI</li>
+					</ul>
+
+					<aside class="notes">
+						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
+					</aside>
+				</section>
+
+				<section>
+					<h2>Why This Talk</h2>
+					<ul>
+						<li class=" visible">We are talking about <span class="bada55">custom</span> WP theme builds</li>
+						<li>Too often we see a <span class="bada55">disconnect</span> between <span class="bada55">designers</span> and <span class="bada55">developers</span>
+							<ul>
+								<li>This tends to lead to inconsistant and confusing UX
+								</ul>
+							</li>
+							<li>Both are crucial to the creative process and should be involved from the <span class="bada55">beginning</span> and <span class="bada55">throughout</span> the project</li>
+							<li>if (<span class="bada55">$design</span> === 'Telling the Clients Story') { <span class="bada55">$development</span> = 'is the medium on which that story is told'; }</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Client First UI/UX</h2>
+						<ul>
+							<li><span class="bada55">UI/UX</span> is usually thought of concerning the frontend / end user</li>
+							<li>Often the UI/UX of the <span class="bada55">client</span> is forgotten</li>
+							<li><span class="bada55">Suzette Frank</span> <small class="bada55">of (mt)</small> gave a great talk on 'Work Statements' / Business Requirements at WordCamp Boston 2013 - <span class="bada55">Back End UX</span> should also be considered during this process.
+						</ul>
+					</section>
+
+					<section>
+						<h2>What is a Front End Dev?</h2>
+						<small>traditionally has <span class="bada55">expert</span> knowledge in...</small>
+						<ul>
+							<li>CSS3</li>
+							<li>Javascript / jQuery
+								<ul>
+									<li>Maybe other libraries as well</li>
+								</ul>
+							</li>
+							<li>HTML5 Awesomeness</li>
+							<li>Understands page load time issues
+								<ul>
+									<li><small><span class="bada55">...and how to complain about 200 milliseconds...talk with Josh Broton some time (@joshbroton)</span></small></li>
+								</ul>
+							</li>		
+						</ul>
+					</section>
+
+					<section>
+						<h2>Ok, So What's a Front End Wordpress Dev???</h2>
+						<ul>
+							<li>Can <small><span class="bada55">(at the very minimum)</span></small> have conversations about the previous items</li>
+							<li>Very comfortble browsing the <span class="bada55">codex</span></li>
+							<li><small><span class="bada55">At the beginning</span></small> Does not need to be an expert PHP dev</li>
+							<li><small><span class="bada55">At the beginning</span></small> Or an expert Javascript dev</li>
+							<li><span class="bada55">Does</span> need to be an 'expert' concerning WordPress
+								<ul>
+									<li><small class="bada55">i.e. Must know more than the client / site content manager</small></li>
+									<li><small class="bada55">AND KNOW HOW TO REGISTER / USE A CPT</small></li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Let's Make It Easy For Them!</h2>
+						<ul>
+							<li>Dont use <span class="bada55">Theme Options</span> if you dont need to
+								<ul><small class="bada55">Only use if absolutley necessary and keep it minimal</small></ul>
+							</li>
+							<li>The <span class="bada55">CPT</span> allows us to symantically create and label <span class="bada55">POST TYPES</span>
+								<ul>
+									<li>With this the client can clearly see what content is entered where</li>
+								</ul>
+							</li>
+							<li>Even rediculously long CPT Labels CAN be a good thing
+							<img src="img/manuals-warranties-cropped.jpg" />
+							</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Utilize stock WordPress functionality</h2>
+						<ul>
+							<li>Meta Boxes (for media) - The <span class="bada55">media manager</span> should be used rather than a simple text field. <img src="img/media-uploader.png" /></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>The Prefect Example</h2>
+						<ul>
+							<li class=" visible"><strong>A List of Team Members or Employees</strong></li>
+							<li>Almost all organization have something similar</li>
+							<li><span class="bada55">Functionality</span> can differ with the same information</li>
+							<li>Clear example of <span class="bada55">meta boxes</span></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>The Bad Employee page</h2>
+						<img src="img/employees-bad.jpg" class="left" />
+						<ul class="half-right">
+							<li class=" visible">No styling</li>
+							<li>Hard to manage <span class="bada55">content</span></li>
+							<li>Hard to account for <span class="bada55">images</span></li>
+							<li>Benefits ?????
+								<ul>
+									<li class="bada55">NONE</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>The Worse Employee Page</h2>
+						<img src="img/employee-worse.png" class="left" />
+						<ul class="half-right">
+							<li class=" visible">HTML in WordPress' <span class="bada55">wysiwyg</span></li>
+							<li><span class="bada55">Depressing</span> to manage content</li>
+							<li>At least some knowledge of <span class="bada55">HTML</span> is required</li>
+							<li>Very Easy to <span class="bada55">screw</span> something up</li>
+							<li>Benefits ?????
+								<ul>
+									<li class="bada55">ABSOLUTLEY NONE</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>A Custom Post is good</h2>
+						<h3>Customizing Meta Boxes are better</h3>
+						<img src="img/meta-boxes.png" class="left" />
+						<ul class="half-right">
+							<li class=" visible"><strong>Imagine a CPT to list employees, that would need</strong></li>
+							<li>Name (Post Title)</li>
+							<li>Description / About (the_content / editor)</li>
+							<li>Meta Boxes for
+								<ul>
+									<li>Phone</li>
+									<li>Email</li>
+									<li>Fax (if people still use this)</li>
+									<li>Image</li>
+									<li>Twitter Handle</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>General Guide Lines</h2>
+						<ul>
+							<li><span class="bada55">Client-first</span> thinking is a must when it comes to solving problems
+							<li>Don't use <span class="bada55">short codes</span> unless necessary (too typo prone)</li>
+							<li>Never include <span class="bada55">HTML</span> in a client's <span class="bada55">work flow</span> (too typo prone / technical)</li>
+							<li>appropriate use of <span class="bada55">CPTs</span> and <span class="bada55">meta boxes</span>
+								<ul>
+									<li>naturally divide content into <span class="bada55">CPTs</span> and <span class="bada55">meta boxes</span> - input fields - select boxes - media manager</li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Wrapping up</h2>
+						<ul>
+							<li>If your client looks like this after training you've done something wrong</li>
+							<li><img src="img/confused-client.jpg" style="height: 200px;" /></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>Wrapping up Cont...</h2>
+						<ul>
+							<li>If you did it <span class="bada55">right</span>, your client will look like this</li>
+							<li><img src="img/happy-dogs.jpg" style="height: 200px;" /></li>
+						</ul>
+					</section>
+
+					<section>
+						<h2>That's It!</h2>
+						<h3 class="bada55">Questions?</h3>
+					</section>
+
+				</div>
+
+			</div>
+
+			<script src="lib/js/head.min.js"></script>
+			<script src="js/reveal.min.js"></script>
+
+			<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+				{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+				{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+				{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+</script>
+
+<script type="text/javascript">
+	(function($){
+		$('li, ul').addClass('fragment');
+		$('li').prepend('&bull;   ');
+
+
+		$('img').on('mouseup', function(){
+			var h = $(window).height();
+			h = h*.95;
+			var wTotal = $(window).width();
+			wTotal = wTotal*.8;
+			w = wTotal/2;
+			var iw = $(this).width();
+			iw = iw/2;
+			console.log(iw);
+			var left = w-iw;
+			var clone = $(this).clone().prependTo('body');
+			$(clone).removeAttr('width').removeClass('left');
+
+
+
+
+
+			$(this).hide();
+			$(clone).addClass('hideMe').animate({
+				'top': '10%'
+			});
+			$(clone).css({
+			// 'left': left,
+			'height': h+'px',
+			'width': 'auto',
+			// 'position': 'absolute',
+			'margin-bottom': '-'+h+'px',
+			'max-height': '100%',
+			'z-index': '999999',
+			'background': '#bada55',
+			'display': 'inline'
+		});
+		// $(this).addClass('original');
+		$('body > img.hideMe').on('click', function(){
+			$(this).remove();
+			$('section img').show();
+		});
+	});
+		(function(){
+			var $ = jQuery;
+			var footer = '<p class="clear test">\
+			<small>@add_action_dan</small>\
+			<small>@blueearth</small>\
+		</p>';
+		$('section').append(footer);
+	})();
+})(jQuery);
+
+</script>
+
+</body>
+</html>
