@@ -26,9 +26,12 @@ img.me {
 ul {
 	float: left;
 }
+ul li, ul ul {
+	line-height: 1.8rem !important;
+}
 .reveal li {
 	float: left;
-	margin:0 0 .3rem;
+	margin:0 0 .8rem;
 }
 p.clear {
 	clear: both;
